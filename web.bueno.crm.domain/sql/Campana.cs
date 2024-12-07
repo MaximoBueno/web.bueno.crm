@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace web.bueno.crm.sql.Models;
+namespace web.bueno.crm.domain.sql;
 
-public partial class Campana
+public class Campana
 {
     public long Id { get; set; }
 
@@ -25,7 +25,7 @@ public partial class Campana
 
     public DateTime? FechaModificacion { get; set; }
 
-    public virtual ICollection<CampanaGestor> CampanaGestors { get; set; } = new List<CampanaGestor>();
+    public virtual ICollection<CampanaGestor> CampanaGestors { get; set; }
 
-    public virtual ICollection<CampanaProducto> CampanaProductos { get; set; } = new List<CampanaProducto>();
+    public virtual ICollection<CampanaProducto> CampanaProductos { get; set; }
 }

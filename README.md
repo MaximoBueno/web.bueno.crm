@@ -4,6 +4,8 @@ Es un proyecto desde cero de Backend de CRM completo.
 
 ## Tecnologías:
 * Net 8.0.
+* Dotnet.
+* Entity Framework.
 * SQL Server.
 
 ## Autor:

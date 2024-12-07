@@ -1,17 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace web.bueno.crm.sql.Models;
+namespace web.bueno.crm.domain.sql;
 
-public partial class ContactoTelefono
+public class ContactoDireccion
 {
     public long Id { get; set; }
 
     public long? IdContacto { get; set; }
 
-    public int? IdTipoTelefono { get; set; }
+    public int? IdProvincia { get; set; }
 
-    public string? NumeroTelefono { get; set; }
+    public int? IdDepartamento { get; set; }
+
+    public int? IdDistrito { get; set; }
+
+    public string? Ciudad { get; set; }
+
+    public string? Direccion { get; set; }
+
+    public string? Referencia { get; set; }
 
     public bool? EsPrincipal { get; set; }
 

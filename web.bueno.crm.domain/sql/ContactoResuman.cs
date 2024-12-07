@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace web.bueno.crm.sql.Models;
+namespace web.bueno.crm.domain.sql;
 
-public partial class ContactoResuman
+public class ContactoResuman
 {
     public long Id { get; set; }
 

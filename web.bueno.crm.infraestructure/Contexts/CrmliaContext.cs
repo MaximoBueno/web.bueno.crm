@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 
-namespace web.bueno.crm.sql.Models;
+namespace web.bueno.crm.infraestructure.Contexts;
 
 public partial class CrmliaContext : DbContext
 {

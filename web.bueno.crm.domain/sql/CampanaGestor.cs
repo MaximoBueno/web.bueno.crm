@@ -1,17 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace web.bueno.crm.sql.Models;
+namespace web.bueno.crm.domain.sql;
 
-public partial class Producto
+public class CampanaGestor
 {
     public long Id { get; set; }
 
-    public string? NombreProducto { get; set; }
+    public long? IdCampana { get; set; }
 
-    public decimal? Precio { get; set; }
-
-    public int? Cantidad { get; set; }
+    public int? IdGestor { get; set; }
 
     public bool? EsActivo { get; set; }
 
@@ -23,5 +21,5 @@ public partial class Producto
 
     public DateTime? FechaModificacion { get; set; }
 
-    public virtual ICollection<CampanaProducto> CampanaProductos { get; set; } = new List<CampanaProducto>();
+    public virtual Campana? IdCampanaNavigation { get; set; }
 }

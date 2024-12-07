@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace web.bueno.crm.sql.Models;
+namespace web.bueno.crm.domain.sql;
 
-public partial class Persona
+public class Persona
 {
     public long Id { get; set; }
 
@@ -29,5 +29,5 @@ public partial class Persona
 
     public DateTime? FechaModificacion { get; set; }
 
-    public virtual ICollection<Usuario> Usuarios { get; set; } = new List<Usuario>();
+    public virtual ICollection<Usuario> Usuarios { get; set; }
 }

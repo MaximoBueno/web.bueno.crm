@@ -1,19 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace web.bueno.crm.sql.Models;
+namespace web.bueno.crm.domain.sql;
 
-public partial class ContactoCorreo
+public class Usuario
 {
     public long Id { get; set; }
 
-    public long? IdContacto { get; set; }
+    public long? IdPersona { get; set; }
 
-    public int? IdTipoCorreo { get; set; }
+    public string? NombreCompleto { get; set; }
 
     public string? Correo { get; set; }
 
-    public bool? EsPrincipal { get; set; }
+    public string? Clave { get; set; }
 
     public long? UsuarioCreacion { get; set; }
 
@@ -23,5 +23,7 @@ public partial class ContactoCorreo
 
     public DateTime? FechaModificacion { get; set; }
 
-    public virtual Contacto? IdContactoNavigation { get; set; }
+    public virtual ICollection<Gestor> Gestors { get; set; }
+
+    public virtual Persona? IdPersonaNavigation { get; set; }
 }

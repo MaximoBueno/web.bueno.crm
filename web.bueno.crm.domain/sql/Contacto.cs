@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace web.bueno.crm.sql.Models;
+namespace web.bueno.crm.domain.sql;
 
-public partial class Contacto
+public class Contacto
 {
     public long Id { get; set; }
 
@@ -29,13 +29,13 @@ public partial class Contacto
 
     public DateTime? FechaModificacion { get; set; }
 
-    public virtual ICollection<ContactoAtencion> ContactoAtencions { get; set; } = new List<ContactoAtencion>();
+    public virtual ICollection<ContactoAtencion> ContactoAtencions { get; set; }
 
-    public virtual ICollection<ContactoCorreo> ContactoCorreos { get; set; } = new List<ContactoCorreo>();
+    public virtual ICollection<ContactoCorreo> ContactoCorreos { get; set; }
 
-    public virtual ICollection<ContactoDireccion> ContactoDireccions { get; set; } = new List<ContactoDireccion>();
+    public virtual ICollection<ContactoDireccion> ContactoDireccions { get; set; } 
 
-    public virtual ICollection<ContactoResuman> ContactoResumen { get; set; } = new List<ContactoResuman>();
+    public virtual ICollection<ContactoResuman> ContactoResumen { get; set; }
 
-    public virtual ICollection<ContactoTelefono> ContactoTelefonos { get; set; } = new List<ContactoTelefono>();
+    public virtual ICollection<ContactoTelefono> ContactoTelefonos { get; set; }
 }
