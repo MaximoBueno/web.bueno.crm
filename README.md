@@ -17,5 +17,5 @@ Es un proyecto desde cero de Backend de CRM completo.
 - [x] Agregar Estructura Casos de Uso
 - [x] Agregar Caso de Uso Ejemplo (Usuario Login)
 - [ ] Configurar Api
-- [ ] Agrear Controler Usuario
+- [ ] Agregar Controler Usuario
 - [x] Fin
