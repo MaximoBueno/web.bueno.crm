@@ -2,7 +2,7 @@
 ## ¿Qué es?
 Es un proyecto desde cero de Backend de CRM completo.
 
-## Requisitos:
+## Tecnologías:
 * Net 8.0.
 * SQL Server.
 
