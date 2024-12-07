@@ -1,10 +1,13 @@
 using System.Text.Json.Serialization;
-using web.bueno.crm.aplication.Interface;
+using Microsoft.EntityFrameworkCore;
+
+using web.bueno.crm.aplication.Abstractions;
 using web.bueno.crm.infraestructure.Contexts;
 using web.bueno.crm.infraestructure.Repositories;
 using web.bueno.crm.aplication;
-
-using Microsoft.EntityFrameworkCore;
+using web.bueno.crm.aplication.Services;
+using web.bueno.crm.infraestructure.Services;
+using web.bueno.crm.lia.Common.Security;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -19,6 +22,7 @@ builder.Services.AddSwaggerGen();
 
 
 //se agrega repositorios
+builder.Services.AddTransient<ITokenService, TokenService>();
 builder.Services.AddTransient<IUsuarioRepository, UsuarioRepository>();
 
 //se agrega el contexto de la bd
@@ -27,6 +31,7 @@ builder.Services.AddDbContext<CrmLiaContext>(x => x.UseSqlServer(connectionStrin
 
 //se agrega injeccion por clases static
 builder.Services.AddApplicationDependencies();
+builder.Services.AddAuthenticationByJWT();
 
 
 var app = builder.Build();

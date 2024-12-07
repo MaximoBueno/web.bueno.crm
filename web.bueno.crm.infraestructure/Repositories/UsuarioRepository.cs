@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using web.bueno.crm.aplication.Interface;
+using web.bueno.crm.aplication.Abstractions;
 using web.bueno.crm.domain.sql;
 using web.bueno.crm.infraestructure.Contexts;
 

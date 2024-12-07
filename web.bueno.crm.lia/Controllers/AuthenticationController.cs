@@ -11,7 +11,7 @@ namespace web.bueno.crm.lia.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UsuarioController(IMediator mediator) : ControllerBase
+    public class AuthenticationController(IMediator mediator) : ControllerBase
     {
 
         [HttpPost("TestLogin")]

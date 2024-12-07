@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using web.bueno.crm.domain.sql;
 
-namespace web.bueno.crm.aplication.Interface
+namespace web.bueno.crm.aplication.Abstractions
 {
     public interface IUsuarioRepository
     {

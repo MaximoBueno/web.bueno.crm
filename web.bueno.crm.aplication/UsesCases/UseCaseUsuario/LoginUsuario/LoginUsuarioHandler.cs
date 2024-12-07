@@ -6,12 +6,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using web.bueno.crm.aplication.Common;
-using web.bueno.crm.aplication.Interface;
+using web.bueno.crm.aplication.Abstractions;
 using ApplicationException = web.bueno.crm.aplication.Common.ApplicationException;
+using web.bueno.crm.aplication.Services;
 
 namespace web.bueno.crm.aplication.UsesCases.UseCaseUsuario.LoginUsuario
 {
-    public class LoginUsuarioHandler(IUsuarioRepository usuarioRepository, IMapper mapper)
+    public class LoginUsuarioHandler(IUsuarioRepository usuarioRepository, ITokenService tokenService, IMapper mapper)
         : IRequestHandler<LoginUsuarioRequest, IResult>
     {
         public async Task<IResult> Handle(LoginUsuarioRequest request, CancellationToken cancellationToken)
@@ -33,7 +34,7 @@ namespace web.bueno.crm.aplication.UsesCases.UseCaseUsuario.LoginUsuario
                 if (usuario != null) {
 
                     response = new SuccessResult<LoginUsuarioResponse>(
-                        new LoginUsuarioResponse { Token = usuario.Correo }
+                        new LoginUsuarioResponse { Token = tokenService.CreateToken(usuario)}
                     );
 
                 }

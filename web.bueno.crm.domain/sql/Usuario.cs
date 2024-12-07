@@ -12,9 +12,11 @@ public class Usuario
 
     public string? NombreCompleto { get; set; }
 
-    public string? Correo { get; set; }
+    public string Correo { get; set; }
 
-    public string? Clave { get; set; }
+    public string Clave { get; set; }
+
+    public string Roles { get; set; }
 
     public long? UsuarioCreacion { get; set; }
 
