@@ -7,9 +7,7 @@ namespace web.bueno.crm.infraestructure.Contexts;
 
 public partial class CrmliaContext : DbContext
 {
-    public CrmliaContext()
-    {
-    }
+  
 
     public CrmliaContext(DbContextOptions<CrmliaContext> options)
         : base(options)
