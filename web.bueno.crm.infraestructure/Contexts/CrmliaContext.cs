@@ -5,40 +5,40 @@ using web.bueno.crm.domain.sql;
 
 namespace web.bueno.crm.infraestructure.Contexts;
 
-public partial class CrmliaContext : DbContext
+public partial class CrmLiaContext : DbContext
 {
   
 
-    public CrmliaContext(DbContextOptions<CrmliaContext> options)
+    public CrmLiaContext(DbContextOptions<CrmLiaContext> options)
         : base(options)
     {
     }
 
-    public virtual DbSet<Campana> Campanas { get; set; }
+    public virtual DbSet<Campana> Campana { get; set; }
 
-    public virtual DbSet<CampanaGestor> CampanaGestors { get; set; }
+    public virtual DbSet<CampanaGestor> CampanaGestor { get; set; }
 
-    public virtual DbSet<CampanaProducto> CampanaProductos { get; set; }
+    public virtual DbSet<CampanaProducto> CampanaProducto { get; set; }
 
-    public virtual DbSet<Contacto> Contactos { get; set; }
+    public virtual DbSet<Contacto> Contacto { get; set; }
 
-    public virtual DbSet<ContactoAtencion> ContactoAtencions { get; set; }
+    public virtual DbSet<ContactoAtencion> ContactoAtencion { get; set; }
 
-    public virtual DbSet<ContactoCorreo> ContactoCorreos { get; set; }
+    public virtual DbSet<ContactoCorreo> ContactoCorreo { get; set; }
 
-    public virtual DbSet<ContactoDireccion> ContactoDireccions { get; set; }
+    public virtual DbSet<ContactoDireccion> ContactoDireccion { get; set; }
 
     public virtual DbSet<ContactoResuman> ContactoResumen { get; set; }
 
-    public virtual DbSet<ContactoTelefono> ContactoTelefonos { get; set; }
+    public virtual DbSet<ContactoTelefono> ContactoTelefono { get; set; }
 
-    public virtual DbSet<Gestor> Gestors { get; set; }
+    public virtual DbSet<Gestor> Gestor { get; set; }
 
-    public virtual DbSet<Persona> Personas { get; set; }
+    public virtual DbSet<Persona> Persona { get; set; }
 
-    public virtual DbSet<Producto> Productos { get; set; }
+    public virtual DbSet<Producto> Producto { get; set; }
 
-    public virtual DbSet<Usuario> Usuarios { get; set; }
+    public virtual DbSet<Usuario> Usuario { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) {
 

@@ -25,7 +25,7 @@ namespace web.bueno.crm.aplication.UsesCases.UseCaseUsuario.LoginUsuario
 
                 var validatorResult = validator.Validate(request);
 
-                if (validatorResult.IsValid)
+                if (!validatorResult.IsValid)
                     throw new ValidationException(validatorResult.ToString());
 
                 var usuario = await usuarioRepository.Login(request.Correo, request.Clave);

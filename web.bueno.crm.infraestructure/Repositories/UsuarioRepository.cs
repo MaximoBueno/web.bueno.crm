@@ -13,15 +13,15 @@ namespace web.bueno.crm.infraestructure.Repositories
     public class UsuarioRepository : IUsuarioRepository
     {
 
-        private readonly CrmliaContext _context;
+        private readonly CrmLiaContext _context;
 
-        public UsuarioRepository(CrmliaContext context) {
+        public UsuarioRepository(CrmLiaContext context) {
             _context = context;
         }
 
         public async ValueTask<Usuario> Login(string correo, string clave)
         {
-            return await _context.Usuarios.Where(x => x.Correo == correo && x.Clave == clave).FirstOrDefaultAsync();
+            return await _context.Usuario.Where(x => x.Correo == correo && x.Clave == clave).FirstOrDefaultAsync();
         }
     }
 }

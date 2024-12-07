@@ -23,7 +23,7 @@ builder.Services.AddTransient<IUsuarioRepository, UsuarioRepository>();
 
 //se agrega el contexto de la bd
 var connectionString = builder.Configuration.GetConnectionString("CRMLia");
-builder.Services.AddDbContext<CrmliaContext>(x => x.UseSqlServer(connectionString));
+builder.Services.AddDbContext<CrmLiaContext>(x => x.UseSqlServer(connectionString));
 
 //se agrega injeccion por clases static
 builder.Services.AddApplicationDependencies();

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace web.bueno.crm.domain.sql;
 
@@ -23,7 +24,8 @@ public class Usuario
 
     public DateTime? FechaModificacion { get; set; }
 
-    public virtual ICollection<Gestor> Gestors { get; set; }
+    public virtual ICollection<Gestor>? Gestores { get; set; } //puede ser o no un gestor
 
-    public virtual Persona? IdPersonaNavigation { get; set; }
+    [ForeignKey("IdPersona")]
+    public virtual Persona? Persona { get; set; }
 }
