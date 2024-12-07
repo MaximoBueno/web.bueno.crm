@@ -10,5 +10,6 @@ Es un proyecto desde cero de Backend de CRM completo.
 * Maximo Hugo Bueno Uribe.
 
 ## Tareas:
-- [ ] Agregar Proyectos
+- [x] Agregar Proyectos
+- [ ] Corregir Mapeo BD
 - [x] Fin
