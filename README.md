@@ -2,9 +2,8 @@
 ## ¿Qué es?
 Es un proyecto desde cero de Backend de CRM completo.
 
-## Tecnologías:
+## Tecnologías Principales:
 * Net 8.0.
-* Dotnet.
 * Entity Framework.
 * SQL Server.
 
@@ -16,5 +15,7 @@ Es un proyecto desde cero de Backend de CRM completo.
 - [x] Corregir Mapeo BD
 - [x] Agregar Librerias
 - [x] Agregar Estructura Casos de Uso
-- [ ] Agrega Caso de Uso Ejemplo
+- [x] Agregar Caso de Uso Ejemplo (Usuario Login)
+- [ ] Configurar Api
+- [ ] Agrear Controler Usuario
 - [x] Fin
