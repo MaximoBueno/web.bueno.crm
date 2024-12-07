@@ -8,9 +8,18 @@
 
   <ItemGroup>
     <Folder Include="Interface\" />
-    <Folder Include="Common\" />
     <Folder Include="Services\" />
-    <Folder Include="UsesCases\" />
+    <Folder Include="UsesCases\UseCaseUsuario\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="13.0.1" />
+    <PackageReference Include="FluentValidation" Version="11.11.0" />
+    <PackageReference Include="MediatR" Version="12.4.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\web.bueno.crm.domain\web.bueno.crm.domain.csproj" />
   </ItemGroup>
 
 </Project>

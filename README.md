@@ -13,5 +13,8 @@ Es un proyecto desde cero de Backend de CRM completo.
 
 ## Tareas:
 - [x] Agregar Proyectos
-- [ ] Corregir Mapeo BD
+- [x] Corregir Mapeo BD
+- [x] Agregar Librerias
+- [x] Agregar Estructura Casos de Uso
+- [ ] Agrega Caso de Uso Ejemplo
 - [x] Fin
