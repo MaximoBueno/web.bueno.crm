@@ -14,8 +14,12 @@ Es un proyecto desde cero de Backend de CRM completo.
 - [x] Crear Proyectos
 - [x] Corregir Mapeo BD
 - [x] Agregar Librerias
-- [x] Agregar Estructura Casos de Uso
-- [x] Agregar Caso de Uso Ejemplo (Usuario Login)
-- [ ] Configurar Api
-- [ ] Agregar Controler Usuario
+- [x] Agregar Estructura de Casos de Uso
+- [x] Agregar Caso de Uso Ejemplo (Login)
+- [x] Agregar Token
+- [x] Configurar Api (Backend)
+- [x] Corrección de la firma del token jwt
+- [x] Prueba token  (https://jwt.io/) 
+- [x] Agregar Controler Auth
+- [ ] ...
 - [x] ...
