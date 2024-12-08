@@ -13,10 +13,10 @@ namespace web.bueno.crm.lia.Controllers
     [ApiController]
     public class ContactoController(IMediator mediator) : ControllerBase
     {
-        [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(typeof(FailureResult<Exception>), StatusCodes.Status500InternalServerError)]
+        [ProducesResponseType(typeof(FailureResult<ApplicationException>), StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(FailureResult<ValidationException>), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(SuccessResult<ListarContactoPorGestorResponse>), StatusCodes.Status200OK)]
         [Produces(MediaTypeNames.Application.Json)]
         [HttpGet("ListarContactoPorIdGestor")]
         public async Task<IActionResult> ListarContactoPorIdGestor(
@@ -33,7 +33,7 @@ namespace web.bueno.crm.lia.Controllers
             else if (response.GetType() == typeof(FailureResult<ValidationException>))
             {
 
-                return BadRequest(response);
+                return StatusCode(StatusCodes.Status400BadRequest, response);
             }
             else if (response.GetType() == typeof(FailureResult<ApplicationException>))
             {

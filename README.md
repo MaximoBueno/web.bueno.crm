@@ -21,8 +21,9 @@ Es un proyecto desde cero Backend para un CRM completo.
 - [x] Corrección de la firma del token jwt
 - [x] Prueba del token  (https://jwt.io/) 
 - [x] Agregar Controler Auth
-- [x] CU Listar contactors por gestor
+- [x] CU Listar contactos por gestor
 - [x] Api Listar contactos por gestor
+- [x] Agrega schemas para swagger
 - [ ] Validar Paginado Api Listar contactos 
 - [ ] ...
 - [x] ...

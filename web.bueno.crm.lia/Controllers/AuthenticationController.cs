@@ -14,10 +14,11 @@ namespace web.bueno.crm.lia.Controllers
     [ApiController]
     public class AuthenticationController(IMediator mediator) : ControllerBase
     {
-        [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+
+        [ProducesResponseType(typeof(FailureResult<Exception>), StatusCodes.Status500InternalServerError)]
+        [ProducesResponseType(typeof(FailureResult<ApplicationException>), StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(FailureResult<ValidationException>), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(SuccessResult<LoginUsuarioResponse>), StatusCodes.Status200OK)]
         [Produces(MediaTypeNames.Application.Json)]
         [HttpPost("Token")]
         public async Task<IActionResult> Token([FromBody] LoginUsuarioRequest request)
@@ -31,7 +32,7 @@ namespace web.bueno.crm.lia.Controllers
             else if (response.GetType() == typeof(FailureResult<ValidationException>))
             {
 
-                return BadRequest(response);
+                return StatusCode(StatusCodes.Status400BadRequest, response);
             }
             else if (response.GetType() == typeof(FailureResult<ApplicationException>))
             {

@@ -11,7 +11,7 @@ namespace web.bueno.crm.aplication.UsesCases.UseCaseContacto.ListarContactoPorGe
     {
 
         public ListarContactoPorGestorValidator() {
-            RuleFor(x => x.IdGestor).GreaterThan(0).WithMessage("El Id debe ser validao.");
+            RuleFor(x => x.IdGestor).GreaterThan(0).WithMessage("El Id debe ser valido.");
         }
 
     }
