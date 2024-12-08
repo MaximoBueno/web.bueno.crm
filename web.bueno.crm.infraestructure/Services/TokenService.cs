@@ -14,33 +14,32 @@ namespace web.bueno.crm.infraestructure.Services
 {
     public class TokenService : ITokenService
     {
-        public const string SECRET_DEFAULT = "PRUEBAKEYSECRET_PRUEBAKEYSECRET_PRUEBAKEYSECRET";
+        public const string SECRET_DEFAULT = "8DVT4inMYFCCb6880S5h8GF78ztMREHSYNCKwe";
         public const double EXPIRE_HOURS_DEFAULT = 8.0;
 
         public string CreateToken(Usuario user)
         {
-            var key = Encoding.ASCII.GetBytes(SECRET_DEFAULT);
+            var key = Encoding.UTF8.GetBytes(SECRET_DEFAULT);
 
-            var claim = new Claim[]{
-                new Claim(ClaimTypes.Name, user.Correo),
-                new Claim(ClaimTypes.Role, user.Roles)
+            var handler = new JwtSecurityTokenHandler();
+
+            var descriptor = new SecurityTokenDescriptor
+            {
+                Subject = new ClaimsIdentity(new Claim[]
+                    {
+                        new Claim(ClaimTypes.Name, user.Correo),
+                        new Claim(ClaimTypes.Role, user.Roles)
+                    }
+                ),
+                Expires = DateTime.UtcNow.AddHours(EXPIRE_HOURS_DEFAULT),
+                SigningCredentials = new SigningCredentials(
+                    new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature
+                )
             };
 
-            var securityKey = new SymmetricSecurityKey(key);
+            var token = handler.CreateToken(descriptor);
 
-            var singningCred = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256Signature);
-
-            var securityToken = new JwtSecurityToken(
-                claims: claim.AsEnumerable(),
-                expires: DateTime.Now.AddHours(EXPIRE_HOURS_DEFAULT),
-                issuer: "",
-                audience: "",
-                signingCredentials: singningCred
-            );
-
-            string tokenString = new JwtSecurityTokenHandler().WriteToken(securityToken);
-
-            return tokenString;
+            return handler.WriteToken(token);
         }
     }
 }
