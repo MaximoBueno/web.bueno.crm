@@ -20,10 +20,10 @@ builder.Services.AddControllers().AddJsonOptions(x => {
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-
 //se agrega repositorios
 builder.Services.AddTransient<ITokenService, TokenService>();
 builder.Services.AddTransient<IUsuarioRepository, UsuarioRepository>();
+builder.Services.AddTransient<IContactoRepository, ContactoRepository>();
 
 //se agrega el contexto de la bd
 var connectionString = builder.Configuration.GetConnectionString("CRMLia");

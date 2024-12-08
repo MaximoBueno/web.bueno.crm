@@ -18,7 +18,6 @@ namespace web.bueno.crm.infraestructure.Repositories
         {
             _context = context;
         }
-
         public async Task<Contacto> CrearContacto(Contacto contacto)
         {
             await _context.Contacto.AddAsync(contacto);
@@ -31,6 +30,32 @@ namespace web.bueno.crm.infraestructure.Repositories
             _context.Contacto.Update(contacto);
             var returned = await _context.SaveChangesAsync();
             return returned > 0 ? true : false;
+        }
+
+        public async Task<Contacto> BuscarContactoPorIdContactoIdGestor(long IdContacto, long IdGestor)
+        {
+            return await _context.Contacto.Where(x => x.Id == IdContacto && x.IdGestor == IdGestor).FirstOrDefaultAsync();
+        }
+
+        public async Task<long> CantidadContactoPorIdGestor(long IdGestor)
+        {
+            return await _context.Contacto.Where(x => x.IdGestor == IdGestor).CountAsync();
+        }
+
+        public async Task<List<Contacto>> ListarContactoPorIdGestor(long IdGestor, int page, int limit)
+        {
+            if (page == 0)
+                page = 1;
+
+            if (limit == 0)
+                limit = 20;
+
+            var skip = (page - 1) * limit;
+
+            var searched = _context.Contacto.Skip(skip).Take(limit);
+
+            return await searched.ToListAsync();
+
         }
     }
 }

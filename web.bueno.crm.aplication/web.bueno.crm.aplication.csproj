@@ -16,9 +16,4 @@
     <ProjectReference Include="..\web.bueno.crm.domain\web.bueno.crm.domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="UsesCases\UseCaseContacto\CrearContacto\" />
-    <Folder Include="UsesCases\UseCaseContacto\EditarContacto\" />
-  </ItemGroup>
-
 </Project>

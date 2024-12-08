@@ -44,7 +44,8 @@ namespace web.bueno.crm.aplication.UsesCases.UseCaseUsuario.LoginUsuario
 
                 }
 
-            } catch (ValidationException ex)
+            } 
+            catch (ValidationException ex)
             {
 
                 response = new FailureResult<ValidationException>(ex.Message);

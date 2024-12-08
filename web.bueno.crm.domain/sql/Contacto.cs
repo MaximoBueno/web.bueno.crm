@@ -29,13 +29,13 @@ public class Contacto
 
     public DateTime? FechaModificacion { get; set; }
 
-    public virtual ICollection<ContactoAtencion> ContactoAtencions { get; set; }
+    public virtual ICollection<ContactoAtencion>? ContactoAtenciones { get; set; }
 
-    public virtual ICollection<ContactoCorreo> ContactoCorreos { get; set; }
+    public virtual ICollection<ContactoCorreo>? ContactoCorreos { get; set; }
 
-    public virtual ICollection<ContactoDireccion> ContactoDireccions { get; set; } 
+    public virtual ICollection<ContactoDireccion>? ContactoDirecciones { get; set; } 
 
-    public virtual ICollection<ContactoResuman> ContactoResumen { get; set; }
+    public virtual ICollection<ContactoResuman>? ContactoResumenes { get; set; }
 
-    public virtual ICollection<ContactoTelefono> ContactoTelefonos { get; set; }
+    public virtual ICollection<ContactoTelefono>? ContactoTelefonos { get; set; }
 }

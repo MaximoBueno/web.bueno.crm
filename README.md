@@ -1,6 +1,6 @@
 # Backend CRM Lia
 ## ¿Qué es?
-Es un proyecto desde cero de Backend de CRM completo.
+Es un proyecto desde cero Backend para un CRM completo.
 
 ## Tecnologías Principales:
 * Net 8.0.
@@ -14,12 +14,15 @@ Es un proyecto desde cero de Backend de CRM completo.
 - [x] Crear Proyectos
 - [x] Corregir Mapeo BD
 - [x] Agregar Librerias
-- [x] Agregar Estructura de Casos de Uso
+- [x] Agregar Estructura de Casos de Uso (CU)
 - [x] Agregar Caso de Uso Ejemplo (Login)
 - [x] Agregar Token
 - [x] Configurar Api (Backend)
 - [x] Corrección de la firma del token jwt
-- [x] Prueba token  (https://jwt.io/) 
+- [x] Prueba del token  (https://jwt.io/) 
 - [x] Agregar Controler Auth
+- [x] CU Listar contactors por gestor
+- [x] Api Listar contactos por gestor
+- [ ] Validar Paginado Api Listar contactos 
 - [ ] ...
 - [x] ...

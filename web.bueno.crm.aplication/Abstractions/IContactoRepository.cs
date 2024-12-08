@@ -11,5 +11,9 @@ namespace web.bueno.crm.aplication.Abstractions
     {
         Task<Contacto> CrearContacto(Contacto contacto);
         Task<bool> EditarContacto(Contacto contacto);
+        Task<Contacto> BuscarContactoPorIdContactoIdGestor(long IdContacto, long IdGestor);
+        Task<long> CantidadContactoPorIdGestor(long IdGestor);
+        Task<List<Contacto>> ListarContactoPorIdGestor(long IdGestor, int page, int limit);
+
     }
 }
