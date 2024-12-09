@@ -8,7 +8,7 @@ Es un proyecto desde cero Backend para un CRM completo.
 * SQL Server.
 
 ## Autor:
-* Maximo Hugo Bueno Uribe.
+* Max.
 
 ## Tareas:
 - [x] Crear Proyectos
