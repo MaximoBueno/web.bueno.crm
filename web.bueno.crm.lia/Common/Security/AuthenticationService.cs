@@ -1,9 +1,12 @@
-﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.Extensions.Options;
+﻿using System.Text;
+
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
-using System.Text;
+
 using web.bueno.crm.infraestructure.Data;
 using web.bueno.crm.infraestructure.Services;
+
+
 
 namespace web.bueno.crm.lia.Common.Security
 {

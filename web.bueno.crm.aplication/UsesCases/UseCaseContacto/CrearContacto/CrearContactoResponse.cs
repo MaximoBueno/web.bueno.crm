@@ -4,17 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace web.bueno.crm.aplication.UsesCases.UseCaseContacto.ListarContactoPorGestor
+namespace web.bueno.crm.aplication.UsesCases.UseCaseContacto.CrearContacto
 {
-    public class ListarContactoPorGestorResponse
-    {
-        public List<ContactoResponse>? contactos {  get; set; }
-    }
-
-    public class ContactoResponse
+    public class CrearContactoResponse
     {
         public long Id { get; set; }
-
         public int? IdGestor { get; set; }
 
         public int? IdGestorAsignado { get; set; }
@@ -28,8 +22,6 @@ namespace web.bueno.crm.aplication.UsesCases.UseCaseContacto.ListarContactoPorGe
         public int? IdTipoDocumento { get; set; }
 
         public string NumeroDocumento { get; set; }
-
-        public DateTime? FechaCreacion { get; set; }
+        public DateTime FechaCreacion { get; set; }
     }
-
 }

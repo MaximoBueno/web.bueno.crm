@@ -1,8 +1,8 @@
 ﻿using Azure.Core;
-using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Net.Mime;
+using MediatR;
 using web.bueno.crm.aplication.Common;
 using web.bueno.crm.aplication.UsesCases.UseCaseUsuario.LoginUsuario;
 

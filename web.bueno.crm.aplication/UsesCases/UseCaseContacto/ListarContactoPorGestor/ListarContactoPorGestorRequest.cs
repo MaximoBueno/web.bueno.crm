@@ -1,10 +1,11 @@
-﻿using MediatR;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 using web.bueno.crm.aplication.Common;
+using MediatR;
 
 namespace web.bueno.crm.aplication.UsesCases.UseCaseContacto.ListarContactoPorGestor
 {

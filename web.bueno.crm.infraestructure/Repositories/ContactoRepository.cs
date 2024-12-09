@@ -1,9 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
+using Microsoft.EntityFrameworkCore;
 using web.bueno.crm.aplication.Abstractions;
 using web.bueno.crm.domain.sql;
 using web.bueno.crm.infraestructure.Contexts;
@@ -18,11 +19,11 @@ namespace web.bueno.crm.infraestructure.Repositories
         {
             _context = context;
         }
-        public async Task<Contacto> CrearContacto(Contacto contacto)
+        public async Task<bool> CrearContacto(Contacto contacto)
         {
             await _context.Contacto.AddAsync(contacto);
-            await _context.SaveChangesAsync();
-            return contacto;
+            var returned  = await _context.SaveChangesAsync();
+            return returned > 0 ? true : false;
         }
 
         public async Task<bool> EditarContacto(Contacto contacto)

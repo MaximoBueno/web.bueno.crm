@@ -1,9 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
+using Microsoft.EntityFrameworkCore;
 using web.bueno.crm.aplication.Abstractions;
 using web.bueno.crm.domain.sql;
 using web.bueno.crm.infraestructure.Contexts;
