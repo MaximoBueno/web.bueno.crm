@@ -23,11 +23,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Elementos de la solución",
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "web.bueno.crm.aplication", "web.bueno.crm.aplication\web.bueno.crm.aplication.csproj", "{4ED09620-4BBF-4956-907C-133B24C7C1B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "web.bueno.crm.aplication", "web.bueno.crm.aplication\web.bueno.crm.aplication.csproj", "{4ED09620-4BBF-4956-907C-133B24C7C1B8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "web.bueno.crm.domain", "web.bueno.crm.domain\web.bueno.crm.domain.csproj", "{256E12C1-31F4-40A0-86C2-DA6C85D8C7A8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "web.bueno.crm.domain", "web.bueno.crm.domain\web.bueno.crm.domain.csproj", "{256E12C1-31F4-40A0-86C2-DA6C85D8C7A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "web.bueno.crm.infraestructure", "web.bueno.crm.infraestructure\web.bueno.crm.infraestructure.csproj", "{6E1877BA-48D5-4205-A4F5-2CA732D4FACD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "web.bueno.crm.infraestructure", "web.bueno.crm.infraestructure\web.bueno.crm.infraestructure.csproj", "{6E1877BA-48D5-4205-A4F5-2CA732D4FACD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
