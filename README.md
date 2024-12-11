@@ -24,8 +24,9 @@ Es un proyecto desde cero Backend para un CRM completo.
 - [x] CU Listar contactos por gestor
 - [x] Api Listar contactos por gestor
 - [x] Agregar schemas para swagger
-- [x] Corrige Configuracion para el token
+- [x] Corrección del config para el token
 - [x] Agregar crear contacto
+- [x] Agregar editar contacto
 - [ ] Validar Paginado Api Listar contactos 
 - [ ] ...
 - [x] ...

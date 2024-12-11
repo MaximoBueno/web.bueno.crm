@@ -46,7 +46,7 @@ namespace web.bueno.crm.aplication.UsesCases.UseCaseContacto.CrearContacto
                 }
                 else
                 {
-                    response = new FailureResult<ApplicationException>("No existen contactos");
+                    response = new FailureResult<ApplicationException>("Error en " + this.GetType().Name);
                 }
             }
             catch (ValidationException ex)
