@@ -27,6 +27,7 @@ Es un proyecto desde cero Backend para un CRM completo.
 - [x] Corrección del config para el token
 - [x] Agregar crear contacto
 - [x] Agregar editar contacto
+- [x] Se agrega dockerfile para linux
 - [ ] Validar Paginado Api Listar contactos 
 - [ ] ...
 - [x] ...
