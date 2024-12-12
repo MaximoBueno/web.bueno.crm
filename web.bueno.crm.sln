@@ -19,6 +19,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "web.bueno.crm.sql", "web.bu
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Elementos de la solución", "Elementos de la solución", "{A1E7B6C7-421D-4250-A640-3FC453A34A3E}"
 	ProjectSection(SolutionItems) = preProject
+		.dockerignore = .dockerignore
+		Dockerfile = Dockerfile
 		LICENSE.txt = LICENSE.txt
 		README.md = README.md
 	EndProjectSection
