@@ -1,11 +1,12 @@
 # Backend CRM Lia
 ## ¿Qué es?
-Es un proyecto desde cero Backend para un CRM completo.
+Es un proyecto desde cero Backend para un CRM.
 
 ## Tecnologías Principales:
 * Net 8.0.
 * Entity Framework.
 * SQL Server.
+* xUnit.
 
 ## Autor:
 * Max.
@@ -29,6 +30,7 @@ Es un proyecto desde cero Backend para un CRM completo.
 - [x] Agregar editar contacto
 - [x] Se agrega docker para linux
 - [x] Corrección del docker
+- [x] Se agrega test unitarios
 - [ ] Validar Paginado Api Listar contactos 
 - [ ] ...
 - [x] ...

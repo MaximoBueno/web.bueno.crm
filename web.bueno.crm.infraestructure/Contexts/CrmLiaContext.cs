@@ -6,7 +6,7 @@ using web.bueno.crm.domain.sql;
 
 namespace web.bueno.crm.infraestructure.Contexts;
 
-public partial class CrmLiaContext : DbContext
+public class CrmLiaContext : DbContext
 {
   
 

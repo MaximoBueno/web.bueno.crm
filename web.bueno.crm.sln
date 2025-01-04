@@ -31,6 +31,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "web.bueno.crm.domain", "web
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "web.bueno.crm.infraestructure", "web.bueno.crm.infraestructure\web.bueno.crm.infraestructure.csproj", "{6E1877BA-48D5-4205-A4F5-2CA732D4FACD}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{9E40CCFD-B1E9-4FF9-B5CF-F8D49C425031}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "web.bueno.crm.unittest", "web.bueno.crm.unittest\web.bueno.crm.unittest.csproj", "{B5C0544D-484A-4C09-8EBB-831533F6E56E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +61,10 @@ Global
 		{6E1877BA-48D5-4205-A4F5-2CA732D4FACD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6E1877BA-48D5-4205-A4F5-2CA732D4FACD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6E1877BA-48D5-4205-A4F5-2CA732D4FACD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5C0544D-484A-4C09-8EBB-831533F6E56E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5C0544D-484A-4C09-8EBB-831533F6E56E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5C0544D-484A-4C09-8EBB-831533F6E56E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5C0544D-484A-4C09-8EBB-831533F6E56E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -67,6 +75,7 @@ Global
 		{4ED09620-4BBF-4956-907C-133B24C7C1B8} = {0EEEC917-2990-42C2-8A05-25F208AA1CCF}
 		{256E12C1-31F4-40A0-86C2-DA6C85D8C7A8} = {B9F82712-8325-4E9A-A2D3-9D8246C7B50A}
 		{6E1877BA-48D5-4205-A4F5-2CA732D4FACD} = {CD8D6D4A-46C8-4855-A961-69846F1232B8}
+		{B5C0544D-484A-4C09-8EBB-831533F6E56E} = {9E40CCFD-B1E9-4FF9-B5CF-F8D49C425031}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C74392EA-166A-4865-9DF7-BB8D5D6AD88A}
