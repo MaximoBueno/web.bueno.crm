@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace web.bueno.crm.domain.sql;
 
@@ -39,5 +40,6 @@ public class ContactoAtencion
 
     public DateTime? FechaModificacion { get; set; }
 
-    public virtual Contacto? IdContactoNavigation { get; set; }
+    [ForeignKey("IdContacto")]
+    public virtual Contacto? Contactos { get; set; }
 }

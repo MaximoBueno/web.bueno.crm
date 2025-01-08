@@ -29,7 +29,7 @@ public class CrmLiaContext : DbContext
 
     public virtual DbSet<ContactoDireccion> ContactoDireccion { get; set; }
 
-    public virtual DbSet<ContactoResuman> ContactoResumen { get; set; }
+    public virtual DbSet<ContactoResumen> ContactoResumen { get; set; }
 
     public virtual DbSet<ContactoTelefono> ContactoTelefono { get; set; }
 

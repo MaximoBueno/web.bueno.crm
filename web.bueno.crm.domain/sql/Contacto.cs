@@ -35,7 +35,7 @@ public class Contacto
 
     public virtual ICollection<ContactoDireccion>? ContactoDirecciones { get; set; } 
 
-    public virtual ICollection<ContactoResuman>? ContactoResumenes { get; set; }
+    public virtual ICollection<ContactoResumen>? ContactoResumenes { get; set; }
 
     public virtual ICollection<ContactoTelefono>? ContactoTelefonos { get; set; }
 }
