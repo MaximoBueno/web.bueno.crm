@@ -60,6 +60,13 @@ builder.Services.AddTransient<IContactoRepository, ContactoRepository>();
 builder.Services.AddTransient<IContactoTelefonoRepository, ContactoTelefonoRepository>();
 builder.Services.AddTransient<IContactoCorreoRepository, ContactoCorreoRepository>();
 
+//se agrega cors
+builder.Services.AddCors(x =>
+{
+    x.AddDefaultPolicy(c => c.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
+    x.AddPolicy("dev_policy", c => c.WithOrigins("http://localhost:4200").AllowAnyHeader().AllowAnyMethod());
+});
+
 //se agrega el contexto de la bd
 var connectionString = builder.Configuration.GetConnectionString("CRMLia");
 builder.Services.AddDbContext<CrmLiaContext>(x => x.UseSqlServer(connectionString));
@@ -82,6 +89,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseCors("dev_policy");
 
 app.UseAuthorization();
 
