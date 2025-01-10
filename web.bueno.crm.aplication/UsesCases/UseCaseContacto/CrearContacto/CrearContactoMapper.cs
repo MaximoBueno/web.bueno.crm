@@ -22,6 +22,20 @@ namespace web.bueno.crm.aplication.UsesCases.UseCaseContacto.CrearContacto
 
             CreateMap<Contacto, CrearContactoResponse>();
 
+
+            CreateMap<CrearContactoTelefonoRequest, ContactoTelefono>()
+                    .ForMember(d => d.Contactos, opt => opt.Ignore());
+
+            CreateMap<ContactoTelefono, CrearContactoTelefonoResponse>();
+
+
+            CreateMap<CrearContactoCorreoRequest, ContactoCorreo>()
+                    .ForMember(d => d.Contactos, opt => opt.Ignore());
+
+            CreateMap<ContactoCorreo, CrearContactoCorreoResponse>();
+
         }
+
     }
+
 }

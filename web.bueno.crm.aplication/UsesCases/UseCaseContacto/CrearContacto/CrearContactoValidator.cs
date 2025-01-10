@@ -16,4 +16,19 @@ namespace web.bueno.crm.aplication.UsesCases.UseCaseContacto.CrearContacto
             RuleFor(x => x.ApellidoMaterno).NotEmpty().WithMessage("El apellido materno no debe  estar vacio.");
         }
     }
+
+    public class CrearContactoCorreoValidator : AbstractValidator<CrearContactoCorreoRequest>
+    {
+        public CrearContactoCorreoValidator()
+        {
+            RuleFor(x => x.Correo).NotEmpty().WithMessage("El correo no debe estar vacio.");
+        }
+    }
+    public class CrearContactoTelefonoValidator : AbstractValidator<CrearContactoTelefonoRequest>
+    {
+        public CrearContactoTelefonoValidator()
+        {
+            RuleFor(x => x.NumeroTelefono).NotEmpty().WithMessage("El número no debe estar vacio.");
+        }
+    }
 }

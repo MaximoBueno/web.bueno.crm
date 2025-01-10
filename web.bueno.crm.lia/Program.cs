@@ -28,6 +28,8 @@ builder.Services.AddOptions<TokenSettingOptions>()
 builder.Services.AddTransient<ITokenService, TokenService>();
 builder.Services.AddTransient<IUsuarioRepository, UsuarioRepository>();
 builder.Services.AddTransient<IContactoRepository, ContactoRepository>();
+builder.Services.AddTransient<IContactoTelefonoRepository, ContactoTelefonoRepository>();
+builder.Services.AddTransient<IContactoCorreoRepository, ContactoCorreoRepository>();
 
 //se agrega el contexto de la bd
 var connectionString = builder.Configuration.GetConnectionString("CRMLia");
