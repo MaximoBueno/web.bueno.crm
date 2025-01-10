@@ -1,6 +1,3 @@
-using System.Text.Json.Serialization;
-using Microsoft.EntityFrameworkCore;
-
 using web.bueno.crm.aplication.Abstractions;
 using web.bueno.crm.infraestructure.Contexts;
 using web.bueno.crm.infraestructure.Repositories;
@@ -10,6 +7,11 @@ using web.bueno.crm.infraestructure.Services;
 using web.bueno.crm.lia.Common.Security;
 using web.bueno.crm.infraestructure.Data;
 
+using System.Text.Json.Serialization;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.OpenApi.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 //se configura los controllers y su respuesta json
@@ -18,7 +20,34 @@ builder.Services.AddControllers().AddJsonOptions(x => {
 });
 
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+
+//se agrega token
+builder.Services.AddSwaggerGen(x =>
+{
+    var jwtSecurityScheme = new OpenApiSecurityScheme
+    {
+        BearerFormat = "JWT",
+        Name = "Authorization",
+        In = ParameterLocation.Header,
+        Type = SecuritySchemeType.Http,
+        Scheme = JwtBearerDefaults.AuthenticationScheme,
+        Description = "por favor ingresa el jwt",
+        Reference = new OpenApiReference
+        {
+            Id = JwtBearerDefaults.AuthenticationScheme,
+            Type = ReferenceType.SecurityScheme
+        }
+    };
+
+    x.AddSecurityDefinition(jwtSecurityScheme.Reference.Id, jwtSecurityScheme);
+
+    x.AddSecurityRequirement(new OpenApiSecurityRequirement{
+        { jwtSecurityScheme, Array.Empty<string>() }
+    });
+
+    x.SwaggerDoc("v1", new OpenApiInfo { Title = "web.bueno.crm.lia", Version = "v1" });
+
+});
 
 //se agrega configuration del token
 builder.Services.AddOptions<TokenSettingOptions>()

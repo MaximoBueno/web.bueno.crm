@@ -8,9 +8,12 @@ using web.bueno.crm.aplication.UsesCases.UseCaseContacto.ListarContactoPorGestor
 using ApplicationException = web.bueno.crm.aplication.Common.ApplicationException;
 using web.bueno.crm.aplication.UsesCases.UseCaseContacto.CrearContacto;
 using web.bueno.crm.aplication.UsesCases.UseCaseContacto.EditarContacto;
+using Microsoft.AspNetCore.Authorization;
 
 namespace web.bueno.crm.lia.Controllers
 {
+
+    //[Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class ContactoController(IMediator mediator) : ControllerBase
