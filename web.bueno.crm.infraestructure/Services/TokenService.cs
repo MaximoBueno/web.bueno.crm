@@ -40,7 +40,9 @@ namespace web.bueno.crm.infraestructure.Services
                     {
                         new Claim(ClaimTypes.Name, user.Correo),
                         new Claim(ClaimTypes.Role, user.Roles),
-                        new Claim("idu", user.Id.ToString()),
+                        new Claim("uid", user.Id.ToString()),
+                        new Claim("uno", user.NombreCompleto),
+                        new Claim("upe", user.Roles),
                         new Claim("fei", inicio.ToString()),
                         new Claim("fee", expire.ToString()),
                     }
