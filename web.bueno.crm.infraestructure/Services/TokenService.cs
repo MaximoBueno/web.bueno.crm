@@ -31,15 +31,21 @@ namespace web.bueno.crm.infraestructure.Services
 
             var handler = new JwtSecurityTokenHandler();
 
+            var inicio = DateTime.UtcNow;
+            var expire = inicio.AddHours(_options.DurationHours);
+
             var descriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(new Claim[]
                     {
                         new Claim(ClaimTypes.Name, user.Correo),
-                        new Claim(ClaimTypes.Role, user.Roles)
+                        new Claim(ClaimTypes.Role, user.Roles),
+                        new Claim("idu", user.Id.ToString()),
+                        new Claim("fei", inicio.ToString()),
+                        new Claim("fee", expire.ToString()),
                     }
                 ),
-                Expires = DateTime.UtcNow.AddHours(_options.DurationHours),
+                Expires = expire,
                 SigningCredentials = new SigningCredentials(
                     new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature
                 )
