@@ -11,6 +11,7 @@ using System.Text.Json.Serialization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.OpenApi.Models;
+using web.bueno.crm.lia.Common.Filters;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -31,7 +32,7 @@ builder.Services.AddSwaggerGen(x =>
         In = ParameterLocation.Header,
         Type = SecuritySchemeType.Http,
         Scheme = JwtBearerDefaults.AuthenticationScheme,
-        Description = "por favor ingresa el jwt",
+        Description = "Ingresar el jwt",
         Reference = new OpenApiReference
         {
             Id = JwtBearerDefaults.AuthenticationScheme,
@@ -41,12 +42,9 @@ builder.Services.AddSwaggerGen(x =>
 
     x.AddSecurityDefinition(jwtSecurityScheme.Reference.Id, jwtSecurityScheme);
 
-    x.AddSecurityRequirement(new OpenApiSecurityRequirement{
-        { jwtSecurityScheme, Array.Empty<string>() }
-    });
+    x.OperationFilter<AuthorizeCheckOperationFilter>();
 
     x.SwaggerDoc("v1", new OpenApiInfo { Title = "web.bueno.crm.lia", Version = "v1" });
-
 });
 
 //se agrega configuration del token
@@ -91,9 +89,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseCors("dev_policy");
-
+app.UseAuthentication();
 app.UseAuthorization();
-
 app.MapControllers();
-
 app.Run();
