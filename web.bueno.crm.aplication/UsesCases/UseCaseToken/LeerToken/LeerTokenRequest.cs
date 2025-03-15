@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace web.bueno.crm.aplication.UsesCases.UseCaseUsuario.LoginUsuario
+using MediatR;
+using web.bueno.crm.aplication.Common;
+
+namespace web.bueno.crm.aplication.UsesCases.UseCaseToken.LeerToken
 {
-    public class LoginUsuarioResponse
+    public class LeerTokenRequest : IRequest<IResult>
     {
         public string Token { get; set; }
-        public string RefreshToken { get; set; }
     }
-
 }

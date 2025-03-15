@@ -35,7 +35,10 @@ namespace web.bueno.crm.aplication.UsesCases.UseCaseUsuario.LoginUsuario
                 if (usuario != null) {
 
                     response = new SuccessResult<LoginUsuarioResponse>(
-                        new LoginUsuarioResponse { Token = tokenService.CreateToken(usuario)}
+                        new LoginUsuarioResponse { 
+                            Token = tokenService.CreateToken(usuario, false),
+                            RefreshToken = tokenService.CreateToken(usuario, true)
+                        }
                     );
 
                 }

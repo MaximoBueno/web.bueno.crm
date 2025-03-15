@@ -10,6 +10,7 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 using web.bueno.crm.aplication.Services;
+using web.bueno.crm.aplication.UsesCases.UseCaseToken.LeerToken;
 using web.bueno.crm.domain.sql;
 using web.bueno.crm.infraestructure.Data;
 
@@ -24,7 +25,7 @@ namespace web.bueno.crm.infraestructure.Services
             _options = options.Value;
         }
 
-        public string CreateToken(Usuario user)
+        public string CreateToken(Usuario user, bool refresh)
         {
 
             var key = Encoding.UTF8.GetBytes(_options.Key);
@@ -32,21 +33,13 @@ namespace web.bueno.crm.infraestructure.Services
             var handler = new JwtSecurityTokenHandler();
 
             var inicio = DateTime.UtcNow;
-            var expire = inicio.AddHours(_options.DurationHours);
+            var expire = inicio.AddHours((refresh == true ? _options.DurationHoursRefresh : _options.DurationHours));
 
             var descriptor = new SecurityTokenDescriptor
             {
-                Subject = new ClaimsIdentity(new Claim[]
-                    {
-                        new Claim(ClaimTypes.Name, user.Correo),
-                        new Claim(ClaimTypes.Role, user.Roles),
-                        new Claim("uid", user.Id.ToString()),
-                        new Claim("uno", user.NombreCompleto),
-                        new Claim("upe", user.Roles),
-                        new Claim("fei", inicio.ToString()),
-                        new Claim("fee", expire.ToString()),
-                    }
-                ),
+                Subject = GenerateClaims(user, refresh, inicio, expire),
+
+              
                 Expires = expire,
                 SigningCredentials = new SigningCredentials(
                     new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature
@@ -57,5 +50,37 @@ namespace web.bueno.crm.infraestructure.Services
 
             return handler.WriteToken(token);
         }
+
+
+        private ClaimsIdentity GenerateClaims(Usuario user, bool refresh, DateTime inicio, DateTime expire)
+        {
+
+            var Subject = new ClaimsIdentity(new Claim[]
+                    {
+                        new Claim(ClaimTypes.Name, user.Correo),
+                        new Claim(ClaimTypes.Role, user.Roles),
+                        new Claim("uid", user.Id.ToString()),
+                        new Claim("uno", user.NombreCompleto),
+                        new Claim("upe", user.Roles),
+                        new Claim("fei", inicio.ToString()),
+                        new Claim("fee", expire.ToString()),
+                    }
+             );
+
+            if (refresh)
+            {
+                Subject.AddClaim(new Claim("refresh", refresh.ToString()));
+            }
+
+            return Subject;
+        }
+
+        public LeerTokenResponse ReadToken(LeerTokenRequest req)
+        {
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var readToken = tokenHandler.ReadJwtToken(req.Token);
+            return new LeerTokenResponse { Payload = readToken.Payload.ToDictionary<string, object>() };
+        }
+
     }
 }
