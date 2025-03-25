@@ -11,6 +11,6 @@ namespace web.bueno.crm.aplication.Abstractions
     public interface IUsuarioRepository
     {
         ValueTask<Usuario> Login(string correo, string clave);
-
+        Task<Usuario> ObtenerUsuarioPorId(long Id);
     }
 }

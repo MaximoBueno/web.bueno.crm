@@ -24,5 +24,10 @@ namespace web.bueno.crm.infraestructure.Repositories
         {
             return await _context.Usuario.Where(x => x.Correo == correo && x.Clave == clave).FirstOrDefaultAsync();
         }
+
+        public async Task<Usuario> ObtenerUsuarioPorId(long Id)
+        {
+            return await _context.Usuario.Where(x => x.Id == Id).FirstOrDefaultAsync();
+        }
     }
 }
