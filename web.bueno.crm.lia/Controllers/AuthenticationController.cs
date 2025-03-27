@@ -11,12 +11,13 @@ using web.bueno.crm.aplication.Common;
 using web.bueno.crm.aplication.UsesCases.UseCaseUsuario.LoginUsuario;
 using MediatR;
 using web.bueno.crm.aplication.Services;
+using web.bueno.crm.aplication.UsesCases.UseCaseToken.RefreshToken;
 
 namespace web.bueno.crm.lia.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AuthenticationController(IMediator mediator, ITokenService tokenService) : ControllerBase
+    public class AuthenticationController(IMediator mediator) : ControllerBase
     {
 
         [AllowAnonymous]
@@ -60,7 +61,36 @@ namespace web.bueno.crm.lia.Controllers
         {
             try
             {
-                var response = tokenService.ReadToken(req);
+                var response = await mediator.Send(req);
+                return Ok(response);
+            }
+
+            catch (ValidationException ex)
+            {
+                return StatusCode(StatusCodes.Status400BadRequest, new FailureResult<ValidationException>(ex.Message));
+            }
+            catch (ApplicationException ex)
+            {
+                return StatusCode(StatusCodes.Status404NotFound, new FailureResult<ApplicationException>(ex.Message));
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, new FailureResult<Exception>(ex.Message));
+            }
+        }
+
+        [Authorize]
+        [ProducesResponseType(typeof(FailureResult<Exception>), StatusCodes.Status500InternalServerError)]
+        [ProducesResponseType(typeof(FailureResult<ApplicationException>), StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(FailureResult<ValidationException>), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(SuccessResult<RefreshTokenResponse>), StatusCodes.Status200OK)]
+        [Produces(MediaTypeNames.Application.Json)]
+        [HttpPut("RefreshToken")]
+        public async Task<ActionResult> RefreshToken([FromBody] RefreshTokenRequest req)
+        {
+            try
+            {
+                var response = await mediator.Send(req);
                 return Ok(response);
             }
 

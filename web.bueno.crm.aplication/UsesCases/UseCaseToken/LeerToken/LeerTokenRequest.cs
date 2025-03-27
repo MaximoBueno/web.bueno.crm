@@ -4,8 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using MediatR;
 using web.bueno.crm.aplication.Common;
+using MediatR;
 
 namespace web.bueno.crm.aplication.UsesCases.UseCaseToken.LeerToken
 {

@@ -1,7 +1,4 @@
-﻿using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Options;
-using Microsoft.IdentityModel.Tokens;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
@@ -9,8 +6,14 @@ using System.Net.Sockets;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
+
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
+using Microsoft.IdentityModel.Tokens;
+
 using web.bueno.crm.aplication.Services;
 using web.bueno.crm.aplication.UsesCases.UseCaseToken.LeerToken;
+using web.bueno.crm.aplication.UsesCases.UseCaseToken.RefreshToken;
 using web.bueno.crm.domain.sql;
 using web.bueno.crm.infraestructure.Data;
 
@@ -59,6 +62,7 @@ namespace web.bueno.crm.infraestructure.Services
                     {
                         new Claim(ClaimTypes.Name, user.Correo),
                         new Claim(ClaimTypes.Role, user.Roles),
+                        new Claim("ulo", user.Correo),
                         new Claim("uid", user.Id.ToString()),
                         new Claim("uno", user.NombreCompleto),
                         new Claim("upe", user.Roles),
@@ -81,6 +85,5 @@ namespace web.bueno.crm.infraestructure.Services
             var readToken = tokenHandler.ReadJwtToken(req.Token);
             return new LeerTokenResponse { Payload = readToken.Payload.ToDictionary<string, object>() };
         }
-
     }
 }

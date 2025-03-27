@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using web.bueno.crm.aplication.UsesCases.UseCaseToken.LeerToken;
+using web.bueno.crm.aplication.UsesCases.UseCaseToken.RefreshToken;
 using web.bueno.crm.domain.sql;
 
 namespace web.bueno.crm.aplication.Services
