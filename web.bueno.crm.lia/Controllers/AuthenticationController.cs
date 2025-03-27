@@ -9,9 +9,9 @@ using ApplicationException = web.bueno.crm.aplication.Common.ApplicationExceptio
 using web.bueno.crm.aplication.UsesCases.UseCaseToken.LeerToken;
 using web.bueno.crm.aplication.Common;
 using web.bueno.crm.aplication.UsesCases.UseCaseUsuario.LoginUsuario;
-using MediatR;
-using web.bueno.crm.aplication.Services;
 using web.bueno.crm.aplication.UsesCases.UseCaseToken.RefreshToken;
+
+using MediatR;
 
 namespace web.bueno.crm.lia.Controllers
 {

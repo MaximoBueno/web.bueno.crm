@@ -1,14 +1,17 @@
-﻿using Azure.Core;
+﻿using System.Net.Mime;
+
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System.Net.Mime;
-using MediatR;
+
+using ApplicationException = web.bueno.crm.aplication.Common.ApplicationException;
+
 using web.bueno.crm.aplication.Common;
 using web.bueno.crm.aplication.UsesCases.UseCaseContacto.ListarContactoPorGestor;
-using ApplicationException = web.bueno.crm.aplication.Common.ApplicationException;
 using web.bueno.crm.aplication.UsesCases.UseCaseContacto.CrearContacto;
 using web.bueno.crm.aplication.UsesCases.UseCaseContacto.EditarContacto;
-using Microsoft.AspNetCore.Authorization;
+
+using MediatR;
 
 namespace web.bueno.crm.lia.Controllers
 {
